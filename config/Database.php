@@ -1,10 +1,10 @@
 <?php 
   class Database {
     // DB Params
-    private $host = 'localhost';
-    private $db_name = 'myblog';
-    private $username = 'root';
-    private $password = '';
+    private $host = getenv('JAWSDB_HOST');
+    private $db_name = getenv('JAWSDB_NAME');
+    private $username = getenv('JAWSDB_USER');
+    private $password = getenv('JAWSDB_PASS');
     private $conn;
 
     // DB Connect
