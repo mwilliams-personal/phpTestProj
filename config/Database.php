@@ -1,8 +1,8 @@
 <?php 
   class Database {
     // DB Params
-    private $host = getenv('JAWSDB_HOST');
-    private $db_name = getenv('JAWSDB_NAME');
+    private $host = 'xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
+    private $db_name = 'ed4m4w1lz2o28h48';
     private $username = getenv('JAWSDB_USER');
     private $password = getenv('JAWSDB_PASS');
     private $conn;
