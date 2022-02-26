@@ -4,7 +4,6 @@
     private $host = 'xlf3ljx3beaucz9x.cbetxkdyhwsb.us-east-1.rds.amazonaws.com';
     private $db_name = 'ed4m4w1lz2o28h48';
     private $username = 'c45yfcitsb3w40ak';
-    private $password = getenv('JAWSDB_PASS');
     private $conn;
 
     // DB Connect
@@ -12,11 +11,10 @@
       $this->conn = null;
 
       try { 
-        $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->db_name, $this->username, $this->password);
+        $this->conn = new PDO('mysql:host=' . $this->host . ';dbname=' . $this->db_name, $this->username, getenv('JAWSDB_PASS'));
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch(PDOException $e) {
         echo 'Connection Error: ' . $e->getMessage();
-        echo 'Connection does not work';
       }
 
       return $this->conn;
